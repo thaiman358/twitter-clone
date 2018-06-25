@@ -1,0 +1,23 @@
+<a href="/twitters">一覧へ</a>
+<%= form_with(model: @twitter, local: true, url: choose_new_or_edit) do |form| %>
+ <% if @twitter.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @twitter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="tw_title">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  
+  <div class="tw_title">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>

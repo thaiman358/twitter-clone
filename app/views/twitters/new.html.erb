@@ -1,4 +1,12 @@
-<h2>つぶやく</h2>
-
-<%= render 'form' %>
-<a href="/twitters">戻る</a>
+<head>
+    <meta charset="UTF-8">
+    <%= stylesheet_link_tag "twitters", :media => "all" %>
+</head>
+<body>
+　　<header class="header">
+　　  <div class = "logo">投稿画面</div>
+      <div class = "tweet">
+      <%= link_to '一覧へ戻る', twitters_path %>
+      </div>
+    </header>
+　　<div><%= render 'form' %></div>

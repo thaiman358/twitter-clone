@@ -1,4 +1,21 @@
-<h1>詳細</h1>
-<p>@<%= @twitter.name %></p>
-<p><%= @twitter.content %></p>
-<a href="/twitters">戻る</a>
+<head>
+    <meta charset="UTF-8">
+    <%= stylesheet_link_tag "twitters", :media => "all" %>
+</head>
+<body>
+    <header class="header">
+      <div class = "logo_show">@<%= @twitter.name %>の投稿</div>
+      <div class = "tweet">
+      </div>
+    </header>
+
+    <div class = "container">
+      <p class = "name_show">@<%= @twitter.name %></p>
+      <p class = "content_show">「<%= @twitter.content %>」</p>
+      <a href="/twitters">戻る</a>
+    </div>
+    
+    <footer class="footer">
+      <p>Copyright © 2018 DIVE INC All RIGHTS RESERVED.</p>
+    </footer>    
+ </body>

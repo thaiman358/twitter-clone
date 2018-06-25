@@ -1,23 +1,38 @@
-<a href="/twitters">一覧へ</a>
-<%= form_with(model: @twitter, local: true, url: choose_new_or_edit) do |form| %>
- <% if @twitter.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @twitter.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
-  <div class="tw_title">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+<head>
+    <meta charset="UTF-8">
+    <%= stylesheet_link_tag "twitters", :media => "all" %>
+</head>
+<body>
+  <a href="/twitters">一覧へ</a>
+  <div class = "container">
+    <%= form_with(model: @twitter, local: true, url: choose_new_or_edit) do |form| %>
+    <% if @twitter.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+        <% @twitter.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <table>
+      <tr>
+        <th><%= form.label :name %></th>
+        <td><%= form.text_field :name %></td>
+      </tr>
+      
+      <tr>
+        <th><%= form.label :content %></th>
+        <td><%= form.text_field :content %></td>
+      </tr>
+    </table>
+    <%= form.submit "投稿"%>
   </div>
   
-  <div class="tw_title">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <%= form.submit %>
 <% end %>
+  
+  <footer class="footer">
+    <p>Copyright © 2018 DIVE INC All RIGHTS RESERVED.</p>
+  </footer>
+
+ </body>

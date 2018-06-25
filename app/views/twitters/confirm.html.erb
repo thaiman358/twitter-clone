@@ -1,15 +1,26 @@
-<h3>投稿確認</h3>
-
-<%= form_with(model: @twitter, url: twitters_path, local: true) do |form| %>
-  <%= form.hidden_field :name %>
-  <%= form.hidden_field :content %>
-
-  <p>name:<%= @twitter.name %></p>
-  <p>本文:<%= @twitter.content %></p>
-  <%= form.submit  "投稿" %>
-  
-  <%= form_with(model: @twitter, url: new_twitter_path, local: true, method: 'get') do |form| %>
-  <%= form.hidden_field :name %>
-  <%= form.hidden_field :content %>
-  <%= form.submit "もどる" %>
-<% end %>
+<head>
+    <meta charset="UTF-8">
+    <%= stylesheet_link_tag "twitters", :media => "all" %>
+</head>
+<body>
+  <header class="header">
+    <div class = "logo">確認画面</div>
+  </header>
+  <div class = "container">
+    <%= form_with(model: @twitter, url: twitters_path, local: true) do |form| %>
+      <%= form.hidden_field :name %>
+      <%= form.hidden_field :content %>
+      <p>投稿者:@<%= @twitter.name %></p>
+      <p>本文:<%= @twitter.content %></p>
+      <%= form.submit  "投稿" %>
+    <% end %>
+    <%= form_with(model: @twitter, url: new_twitter_path, local: true, method: 'get') do |form| %>
+      <%= form.hidden_field :name %>
+      <%= form.hidden_field :content %>
+      <%= form.submit "もどる" %>
+    <% end %>
+  </div>
+  <footer class="footer">
+    <p>Copyright © 2018 DIVE INC All RIGHTS RESERVED.</p>
+  </footer>
+</body>

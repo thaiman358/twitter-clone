@@ -1,16 +1,28 @@
 <head>
     <meta charset="UTF-8">
+    <%= stylesheet_link_tag "twitters", :media => "all" %>
 </head>
-<h1>Tweet一覧</h1>
-<%= link_to '新規投稿', new_twitter_path %>
-<% @twitters.each do |twitter| %>
-  <table>
-  <tr>
-    <td><%= twitter.name %></td>
-    <td><%= twitter.content %></td>
-    <td><%= link_to '詳細', twitter_path(twitter.id) %></td>
-    <td><%= link_to "編集", edit_twitter_path(twitter.id) %></td>
-    <td><%= link_to '削除', twitter_path(twitter.id), method: :delete %></td>
-  </tr>
-  </table>
-<% end %>
+<body>
+    <header class="header">
+      <div class = "logo">TimeLine</div>
+      <div class = "tweet">
+        <%= link_to '新規投稿', new_twitter_path %>
+      </div>
+    </header>
+    
+    <div class = "container">
+      <% @twitters.each do |twitter| %>
+        <div class = "text">
+          <p class = "name">投稿者：@<%= twitter.name %></p>
+          <p class = "content">「<%= twitter.content %>」</p>
+          <p class = "edition"><%= link_to '詳細', twitter_path(twitter.id) %>
+          <%= link_to "編集", edit_twitter_path(twitter.id) %>
+          <%= link_to '削除', twitter_path(twitter.id), method: :delete %></p>
+        </div>
+      <% end %>
+    </div>
+    
+    <footer class="footer">
+      <p>Copyright © 2018 DIVE INC All RIGHTS RESERVED.</p>
+    </footer>    
+ </body>

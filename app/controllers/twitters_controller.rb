@@ -16,7 +16,7 @@ class TwittersController < ApplicationController
   def create
     @twitter = Twitter.create(twitter_params)
     if @twitter.save
-      redirect_to new_twitter_path
+      redirect_to twitters_path
     else
       render 'new'
     end

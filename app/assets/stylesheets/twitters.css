@@ -1,0 +1,124 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+html {
+  font-size: 100%;
+  background-color: white;
+  font-family: "Arial";
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+}
+
+  /* head関連*/
+.header{
+    position: fixed;
+    top: 0;
+    z-index:10;
+    width: 100%;
+    height: 100px;
+    background-color: #20beff;
+    float: none;
+}
+
+.container {
+  position: relative;
+  width: 800px;
+  padding-top: 10px;
+  top: 105px;
+  height: inherit;
+  padding-bottom: 70px;
+  bottom: 105px;
+  margin: auto;
+}
+ 
+.footer{
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  z-index:10;
+  bottom: 0;
+  background-color: #20beff;
+  display: table;
+  margin-top: 100px
+}
+
+.footer p {
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+} 
+ 
+  /* headの中身*/
+.logo{
+    width: 300px;
+    float: left;
+    margin: 0px;
+    color: white;
+    height: 100px;
+    text-align:center;
+    font-size: 2.4rem;
+    display: flex;
+	align-items: center;
+}
+  /* headの中身*/
+.logo_show{
+    width: 600px;
+    float: left;
+    margin: 0px;
+    color: white;
+    height: 100px;
+    text-align:center;
+    font-size: 2.4rem;
+    display: flex;
+	align-items: center;
+}
+  /* headの中身*/
+.tweet{
+    width: 300px;
+    float: left;
+    margin: 0px;
+    color: white;
+    height: 100px;
+    text-align:center;
+    font-size: 1.4rem;
+    display: flex;
+	align-items: center;
+}
+
+/**一覧の各投稿の描画*/
+.text{
+    width: 100%;
+    background-color: #E7E8E2;
+    margin-top: 10px;
+}
+
+/**name*/
+.name{
+    font-size: 1.2rem;
+}
+.content{
+    font-size: 1.6rem;
+}
+.edition{
+    font-size: 0.8rem;
+}
+
+.name_show{
+    font-size: 2rem;
+}
+.content_show{
+    font-size: 3rem;
+}
+
+
+
+.tw_title{
+    margin-top: 10px
+}
